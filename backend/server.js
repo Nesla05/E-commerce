@@ -33,10 +33,10 @@ const User = mongoose.model('User', userSchema);
 
 app.post('/login', async (req, res) => {
     const { username, password } = req.body;
-    console.log('Received login request:', username, password); // Add this line for debugging
+    console.log('Received login request:', username, password); 
     try {
         const user = await User.findOne({ username, password });
-        console.log('User found:', user); // Add this line for debugging
+        console.log('User found:', user); 
         if (user) {
             res.json({ success: true, message: 'Login successful' });
         } else {
